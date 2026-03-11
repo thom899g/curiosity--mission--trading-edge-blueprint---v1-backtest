@@ -1,0 +1,6 @@
+## OUTPUT FORMAT
+Backtest generates:
+- `equity_curve.csv`: Daily P&L
+- `trades.csv`: Individual trade log with entry/exit reasons
+- `metrics.json`: Performance statistics
+- `diagnostics/`: Funding impact analysis, regime classification plots
