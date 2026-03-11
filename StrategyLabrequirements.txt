@@ -1,0 +1,36 @@
+# Core Data & Calculation
+pandas>=2.0.0
+numpy>=1.24.0
+ccxt>=4.0.0
+pyarrow>=12.0.0  # Parquet support
+python-dateutil>=2.8.0
+
+# Technical Analysis
+ta>=0.10.0  # TA-Lib wrapper
+# Note: If TA-Lib C library unavailable, use "ta-lib" Python alternative
+
+# Event-Driven Backtesting
+sortedcontainers>=2.4.0  # For event queue
+
+# Firebase Integration (State Management)
+firebase-admin>=6.2.0
+
+# Data Visualization
+matplotlib>=3.7.0
+plotly>=5.14.0
+seaborn>=0.12.0
+
+# Configuration & Logging
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Optimization
+scikit-learn>=1.3.0  # For Bayesian optimization utilities
+scipy>=1.10.0
+
+# Testing
+pytest>=7.4.0
+
+# Type Hinting (Development)
+mypy>=1.5.0
+types-PyYAML>=6.0.12
