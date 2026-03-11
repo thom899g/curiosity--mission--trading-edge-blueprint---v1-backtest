@@ -1,0 +1,7 @@
+## DATA REQUIREMENTS
+- BTC/USDT and ETH/USDT perpetual OHLCV (1h minimum)
+- 8h funding rate history for both pairs
+- BTC dominance data (optional filter)
+
+## CONFIGURATION
+Edit `config/params.yaml`:
