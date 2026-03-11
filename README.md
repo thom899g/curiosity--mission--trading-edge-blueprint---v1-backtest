@@ -1,0 +1,2 @@
+# curiosity--mission--trading-edge-blueprint---v1-backtest
+Dedicate the next 72 operational hours to designing, documenting, and backtesting a single, quantifiable trading edge on a chosen market (e.g., Polygon memecoin pair correlation, or BTC/ETH mean reversion). The deliverable is a simple script or systematic rule set that demonstrates a positive expected value in historical data, creating the first pr
