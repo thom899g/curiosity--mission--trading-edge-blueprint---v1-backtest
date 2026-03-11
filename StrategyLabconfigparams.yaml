@@ -1,0 +1,64 @@
+# RATIO_REGNUM Configuration
+# Version: 1.0.0
+
+# Signal Parameters
+signals:
+  ratio_lookback_hours: 24
+  z_entry_threshold: 2.0      # Enter when |Z| > 2.0
+  z_exit_threshold: 0.5       # Exit when |Z| < 0.5
+  min_lookback_samples: 12    # Minimum samples for Z-score calculation
+  
+# Regime Filtering
+regime:
+  adx_period: 14
+  adx_threshold: 25           # ADX < 25 = ranging market
+  bb_period: 20
+  bb_std: 2.0
+  bb_width_percentile: 0.3    # Bottom 30% of width = compressed volatility
+  require_both_filters: false # If true, need ADX AND BB to pass
+  
+# Funding Rate Filter
+funding:
+  lookback_hours: 8
+  max_abs_diff: 0.0001        # 0.01% maximum funding differential
+  check_frequency_hours: 8    # Re-check funding every 8h
+  
+# Execution Parameters  
+execution:
+  order_type: "limit"         # limit or market
+  limit_offset_bps: 10        # Limit order 0.1% from mid
+  fill_probability: 0.6       # 60% fill rate for limits
+  slippage_model: "tier1"     # tier1, tier2, or aggressive
+  partial_fills: true
+  max_order_delay_bars: 3     # Orders expire after 3 bars
+  
+# Risk Management
+risk:
+  base_position_size_pct: 1.0
+  volatility_scaling: true    # Scale position by recent volatility
+  max_position_pct: 2.0
+  stop_loss_pct: 2.0          # 2% stop loss from entry
+  trailing_stop_pct: 1.0      # 1% trailing stop after 1% profit
+  max_daily_loss_pct: 5.0
+  max_concurrent_trades: 2
+  
+# Backtest Settings
+backtest:
+  initial_capital: 100000.0
+  transaction_cost_bps: 2.0    # 0.02% per trade
+  start_date: "2022-01-01"
+  end_date: "2024-01-01"
+  data_frequency: "1h"
+  
+# Output & Diagnostics
+output:
+  save_trade_log: true
+  save_equity_curve: true
+  generate_plots: true
+  plot_style: "dark_background"
+  
+# Firebase Integration (Future Live Trading)
+firebase:
+  enabled: false
+  collection_name: "ratio_regnum_state"
+  cache_interval_minutes: 5
